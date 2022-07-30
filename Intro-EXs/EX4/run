@@ -1,0 +1,44 @@
+#! /bin/bash
+
+pwd
+touch newscript 
+echo " hi the new script will check a dir name and add new one if not exist,it is incloding hello file ,you can see the new files under EX4 folder.\n"
+
+echo '#! /bin/bash
+dir="mynewDir"
+if [ ! -d "$dir" ]
+then
+   echo "creating new dir: $dir"
+   mkdir $dir
+   cd $dir
+     ls
+     touch hellofile
+     echo "where I am now?"
+     pwd
+     echo "hello bash" > hellofile
+     cat hellofile
+   cd ..
+    
+  echo "I an now out of  $dir"  
+  pwd
+  ls
+ else
+   echo "$dir is exist, please try again !" 
+ fi  '> newscript
+chmod u+x newscript
+echo "running the new script"
+./newscript
+
+echo "if you want to delete the new script please enter y/n"
+read answer
+if [ $answer = "y" ]
+then
+echo "newscript file is deleted"
+rm newscript
+fi
+echo "ok goodbye"
+
+
+
+
+

@@ -1,0 +1,14 @@
+#! /bin/bash
+
+#EX1:
+echo "Ex 1 :"
+echo  "Hi please enter a name : "
+read name
+if [[ $name < "telephone" ]]
+then
+      echo " $name appearing before telephone"
+else
+      echo "$name appearing after telephone"
+fi
+echo "Thanks, EX 1  is done"
+

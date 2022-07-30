@@ -1,0 +1,24 @@
+#! /bin/bash
+
+#EX2:
+echo " EX 2 :"
+echo "countries and there capital cities  "
+declare -A country
+country["Brazil"]="Brasilia"
+country["Israel"]="Jerusalem"
+country["Italy"]="Rome"
+country["Japan"]="Tokyo"
+country["south Korea"]="Seoul"
+
+echo "The Exist countries are ${!country[@]} "
+echo "The capital cities are ${country[@]} "
+
+echo "please enter a country name "
+read cName
+if [ -v  country[$cName] ] #if it  exist in the dict  
+then 
+    echo " The capital of $cName is ${country[$cName]}"
+else
+    echo "the country name not exist in the dict,please try again" 
+fi
+

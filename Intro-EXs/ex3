@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#EX3
+echo "random  aligned table"
+
+for ((i=0;i<3;i++))
+do
+  printf "%-s %s %-s \n" $RANDOM  $RANDOM  $RANDOM
+done
