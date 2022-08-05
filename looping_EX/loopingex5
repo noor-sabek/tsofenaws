@@ -1,0 +1,14 @@
+#!/bin/bash
+
+longest=""
+echo Enter a file you want?
+read file
+for word in $(cat $file); do
+    if [ ${#word} -gt ${#longest} ]; then
+        longest=$word
+    fi
+done
+
+echo the longest word is : $longest
+
+

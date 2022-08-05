@@ -1,0 +1,19 @@
+#!/bin/bash
+#check files and folders
+# adding [-f $name]---> check if file -->but it didnt work  
+
+while true :
+do
+	read -p "Enter a file name: " f
+	if [ -f $f ]
+	then
+        echo "File exist"
+		break
+    fi
+    if [ ! -f $f ]
+    then
+        true
+	fi
+done
+
+

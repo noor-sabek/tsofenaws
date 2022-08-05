@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sum=0
+for i in $(ls)
+do
+if [ ! -d $i ]
+then
+count=$(echo $i | wc -m)
+sum=$(($sum + $count))
+fi
+done
+echo the sums is : $sum
+

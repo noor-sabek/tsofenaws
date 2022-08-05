@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+#[ $?  -nq  0 ]
+read  -p  "enter a dir name " name
+rm $name
+if [ $? -eq 1 ] || [ $? -eq 2 ] 
+then 
+	 cd $name
+	 for i in $(ls)
+         do
+            rm $i
+         done
+   pwd
+	 cd ..
+	 rm -d $name
+	echo the directory removed!
+fi

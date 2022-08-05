@@ -1,0 +1,12 @@
+#! /bin/bash
+
+for i in $(ls)
+do
+if [ -d $i ]
+then
+echo $i is a directory
+else
+echo $i is not directory
+fi
+done
+
