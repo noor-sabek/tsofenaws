@@ -1,6 +1,6 @@
 # tsofenaws
 
-DeveOps AWS training 
+DevOps AWS training 
 
 welcome to my branch
 
