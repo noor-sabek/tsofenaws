@@ -1,0 +1,29 @@
+#!/bin/bash
+while [  True  ]
+echo ""
+echo  "Please enter a command: ls OR pwd OR free OR exit ";
+do
+
+read
+
+if [ $REPLY == ls ]; then
+
+echo $(ls)
+
+elif [ $REPLY == pwd ]; then 
+
+echo $(pwd) 
+
+elif [ $REPLY == free ]; then
+
+echo "$(free)"
+
+elif [ $REPLY == exit ]; then
+break;
+
+else
+echo "Current Command Is Not Supported."
+
+fi
+
+done
