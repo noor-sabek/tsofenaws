@@ -1,28 +1,27 @@
-import os
-from urllib import response
+
 import boto3
-import json
+from appsettings import IAM_client,STS_client ;
+from http.client import EXPECTATION_FAILED
+
+from getUsers_list import get_user_list;
 
 
-def read_my_credentials(credfile="cred.json"):
-    #cf = open(os.getcwd() + '/aws/' + credfile, 'r')
-    #using os.getcwd() to get the working directory,this folder path.
-    #for security we are saving the sensetive info ,config file under our local and adding /home/.. bath . 
-    cf = open('/home/osboxes/Documents/cred.json', 'r')
-    creds = json.load(cf)
-    return creds
+
+print(" To create new AWS IAM User,please Enter a username : ");
+username = input() ; 
+
+def create_newUser(username):
+ #connecting to user credentials and getting the client profile 
+
+ if IAM_client:
+    response = IAM_client.create_user(UserName = username);
+    print("A new User with the name ' "+ username +" ' was created successfully");
+
+ else:
+    EXPECTATION_FAILED() in response ;
+    print(response);
+ 
+
+create_newUser(username);
 
 
-def Add_myUser():
-
- creds = read_my_credentials();
- client = boto3.client('iam', aws_access_key_id=creds['access-key-id'],
-                                  aws_secret_access_key=creds['secret-access-key'],
-                                  region_name=creds['region'])
-
-
- response = client.create_user(UserName='aml');
-print(response.__name__);
-
-
-Add_myUser()

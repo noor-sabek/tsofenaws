@@ -3,7 +3,7 @@ import json
 
 
 def demo_boto3():
-    creds = json.load(open('/home/osboxes/Documents/cred.json', 'r'))
+    creds = json.load(open('boto3/cred.json', 'r'))
     client = boto3.client('iam', aws_access_key_id=creds['access-key-id'],
                                   aws_secret_access_key=creds['secret-access-key'],
                                   region_name=creds['region'])
