@@ -1,0 +1,48 @@
+{
+    "Version": "2012-10-17",
+    "Id": "__default_policy_ID",
+    "Statement": [
+      {
+        "Sid": "__default_statement_ID",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "*"
+        },
+        "Action": [
+          "SNS:GetTopicAttributes",
+          "SNS:SetTopicAttributes",
+          "SNS:AddPermission",
+          "SNS:RemovePermission",
+          "SNS:DeleteTopic",
+          "SNS:Subscribe",
+          "SNS:ListSubscriptionsByTopic",
+          "SNS:Publish",
+          "SNS:Receive"
+        ],
+        "Resource": "arn:aws:sns:eu-west-3:064827688814:rahul-test",
+        "Condition": {
+          "StringEquals": {
+            "AWS:SourceOwner": "064827688814"
+          }
+        }
+      },
+      {
+        "Sid": "AWSEvents_all-events_Id2377506854031",
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "events.amazonaws.com"
+        },
+        "Action": "sns:Publish",
+        "Resource": "arn:aws:sns:eu-west-3:064827688814:rahul-test"
+      },
+      {
+        "Sid": "AWSEvents_S3_Event",
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "s3.amazonaws.com"
+        },
+        "Action": "sns:Publish",
+        "Resource": "arn:aws:sns:eu-west-3:064827688814:rahul-test"
+      }
+    ]
+  }

@@ -8,11 +8,11 @@ from getUsers_list import get_user_list;
 
 
 print(" To create new AWS IAM User,please Enter a username : ");
-username = input() ; 
 
-def create_newUser(username):
+def create_newUser():
  #connecting to user credentials and getting the client profile 
-
+ username = input() ; 
+ 
  if IAM_client:
     response = IAM_client.create_user(UserName = username);
     print("A new User with the name ' "+ username +" ' was created successfully");
@@ -22,6 +22,6 @@ def create_newUser(username):
     print(response);
  
 
-create_newUser(username);
+create_newUser();
 
 
